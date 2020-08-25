@@ -1,0 +1,41 @@
+<button type="button" class="btn btn-primary" name="submit" (click)="changeName('')">Submit</button>
+<br>
+<br>
+
+<button type="button" class="btn btn-success" name="submit" (click)="refreshArr()">Refresh</button>
+
+<div class="container">
+    <div class="row" *ngFor="let det of empList;let i = index;" [@EnterLeave]="'flyIn'">
+        <div class="col-md-3" id="{{'card_'+i}}">
+            <div class="card-counter primary">
+                <i class="fa fa-code-fork"></i>
+                <span class="count-numbers">{{det.id}}</span>
+                <span class="count-name">{{det.name}}</span>
+            </div>
+            <p (click)="removeCard(i)" style="cursor: pointer;"> Remove this </p>
+        </div>        
+    </div>
+
+</div>
+
+<p [innerText]="initial"> </p>
+<p>My name is {{ name }} </p>
+<p>My name is {{ name }} </p>
+<p>My name is {{ name }} </p>
+<p>My name is {{ name }} </p>
+<img [src]="url" alt="Smiley face" height="42" width="42">
+
+<input type="text" name='namefield' #first>
+<input type="text" name='namefield' #second>
+
+<button type="button" class="btn btn-success" (click)="multiply(first.value,second.value)">Multiply</button>
+
+<p>{{multiplyValue}}</p>
+
+{{ name | uppercase }}
+
+
+{{ nameforpipe | lowecase }}
+
+{{ nameforpipe | lowecase }}
+{{ nameforpipe | lowecase }}
